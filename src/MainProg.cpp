@@ -1,6 +1,6 @@
 
 #include <cmath>
-#include <gtk-3.0/gtk/gtkmm/main.h>
+#include <gtkmm.h>
 #include <iostream>
 
 using namespace std;

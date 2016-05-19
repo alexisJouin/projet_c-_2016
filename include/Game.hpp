@@ -1,6 +1,8 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 #include "Player.hpp"
+#include "View.hpp"
+
 
 class Game{
  private:

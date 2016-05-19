@@ -1,21 +1,22 @@
 #include "Game.hpp"
 
-public Game::Game(View typeView, Player player1, Player player2);// Il faudrait mettre les arguments passer à la console dans les paramètres
-    void displayGameStatus() const{
+    Game::Game(View typeView, Player player1, Player player2){}// Il faudrait mettre les arguments passés à la console dans les paramètres
 
+    void displayGameStatus(){
     }
-    void playMove() const{
+
+    void playMove(){
 
     }
     bool isValid(){
 
     }
-    void nextPlayer() const{
+    void nextPlayer(){
 
     }
-    void endGame() const{
+    void endGame(){
 
     }
-    void displayResult() const{
+    void displayResult(){
 
     }

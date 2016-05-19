@@ -1,15 +1,17 @@
 
 #include <cmath>
-#include <gtkmm.h>
+#include <gtk-3.0/gtk/gtkmm/main.h>
 #include <iostream>
 
 using namespace std;
 
 class UiBidon {
     private:
+
         Gtk::Main _kit;
         Gtk::Window _window;
         Gtk::DrawingArea _dessin;
+
     public:
         UiBidon(int argc, char ** argv);
         void run();
@@ -42,7 +44,7 @@ UiBidon::UiBidon(int argc, char ** argv):
             sigc::mem_fun(*this, &UiBidon::afficher));
 
     _dessin.add_events(Gdk::BUTTON_PRESS_MASK);
-    _dessin.signal_button_press_event().connect( 
+    _dessin.signal_button_press_event().connect(
             sigc::mem_fun(*this, &UiBidon::cliquer));
 
     _window.add(_dessin);
@@ -55,7 +57,7 @@ void UiBidon::run() {
     _kit.run(_window);
 }
 
-bool UiBidon::afficher(GdkEventExpose*) { 
+bool UiBidon::afficher(GdkEventExpose*) {
 
     // récupère le contexte cairo
     Glib::RefPtr<Gdk::Window> window = _dessin.get_window();
@@ -115,5 +117,5 @@ void UiBidon::displayMessage(const std::string & title, const std::string & mess
     dialog.set_title(uTitle);
     dialog.run();
 }
- 
+
 

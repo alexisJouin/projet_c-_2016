@@ -2,3 +2,27 @@
 1462372784 source:c:\users\johann.neo-alien\documents\ulco\projet c++\projet\main.cpp
 	<iostream>
 
+1463488543 source:e:\projets\ulco\c++\projet\projet_c-_2016\src\consoleview.cpp
+	"ConsoleView.hpp"
+
+1463489185 e:\projets\ulco\c++\projet\projet_c-_2016\include\consoleview.hpp
+	"View.hpp"
+
+1463488183 e:\projets\ulco\c++\projet\projet_c-_2016\include\view.hpp
+
+1463489671 source:e:\projets\ulco\c++\projet\projet_c-_2016\src\game.cpp
+	"Game.hpp"
+
+1463488267 e:\projets\ulco\c++\projet\projet_c-_2016\include\game.hpp
+	"Player.hpp"
+	"View.hpp"
+
+1462710666 e:\projets\ulco\c++\projet\projet_c-_2016\include\player.hpp
+	<iostream>
+
+1463488451 source:e:\projets\ulco\c++\projet\projet_c-_2016\src\graphicview.cpp
+	"GraphicView.hpp"
+
+1463491947 e:\projets\ulco\c++\projet\projet_c-_2016\include\graphicview.hpp
+	"View.hpp"
+

@@ -42,57 +42,67 @@ void Game::affectedName(){
 void Game::playMove(){
   int res1 = _player1.getResultPlayer(); //Somme actuelle du joueur 1
   int res2 = _player2.getResultPlayer(); //Somme actuelle du joueur 2
-  int choicePlayer, p = 1;
-  std::vector<int> j1Numbers = _player1.getNumbersPlayer();
-  std::vector<int> j2Numbers = _player2.getNumbersPlayer();
-  std::string j1,j2;
+  int choicePlayer, p = 1; //Choix du joueur et numéro du joueur 1 ou 2
+  std::vector<int> j1Numbers = _player1.getNumbersPlayer(); //Vecteur des nombres choisient par le joueur 1
+  std::vector<int> j2Numbers = _player2.getNumbersPlayer(); //Vecteur des nombres choisient par le joueur 1
+  std::string j1,j2; //Nom des joueurs 1 et 2
   j1 = _player1.getNom();
   j2 = _player2.getNom();
   
   //while( res1 < 42 || res2 < 42 ){
 
   //joueur 1
-    //Affichage de 10 nombres aléatoires
+  //Affichage de 10 nombres aléatoires
 
-  
-    for(int c : _numbers){
-      std::cout << "Nombres disponibles: "<< c << " " << std::endl;
-    }
-    for(int c1 : j1Numbers){
-      std::cout << "Nombres de "<< j1 << " : "<< c1 << " " << std::endl;
-    }    
-    for(int c2 : j2Numbers){
-      std::cout << "Nombres de "<< j2 << " : "<< c2 << " " << std::endl;
-    }
+  //AFFICHAGE De la situation de jeu
+  std::cout << "Nombres disponibles : ";
+  for(int c : _numbers){
+    std::cout << c << " ";
+  }
+  std::cout << "\n";
+
+  std::cout << "Nombres de " << j1 << " : ";
+  for(int c1 : j1Numbers){
+    std::cout << c1 << " ";
+  }    
+  std::cout << "\n";
+
+  std::cout << "Nombres de "<< j2 << " : ";
+  for(int c2 : j2Numbers){
+    std::cout << c2 << " ";
+  }
+  std::cout << "Nombres de "<< j2 << " : ";
+
     
-    if( p == 1){
-      std::cout << _player1.getNom()<< " entre un nombre disponible :  ";
-      std::cin >> choicePlayer;
-      for(int c : _numbers){
-	if( c == choicePlayer){
-	  _numbers.erase(choicePlayer);
-	  j1Numbers.push_back(choicePlayer);
-	}
-	else{
-	  std::cout << "La valeur n'existe pas" << std::endl;
-	}	    
+  if( p == 1){
+    std::cout << _player1.getNom()<< "Entrez un nombre disponible :  ";
+    std::cin >> choicePlayer;
+    for(int c : _numbers){
+      if( c == choicePlayer){
+	_numbers.erase(_numbers.begin(), _numbers.begin()+choicePlayer);
+	j1Numbers.push_back(choicePlayer);
       }
-      p = 2;    
       else{
-	std::cout << _player2.getNom()<< " entre un nombre disponible :  ";
-	std::cin >> choicePlayer;
-	for(int c : _numbers){
-	  if( c == choicePlayer){
-	    _numbers.erase(choicePlayer);
-	    j2Numbers.push_back(choicePlayer);
-	  }
-	  else{
-	    std::cout << "La valeur n'existe pas" << std::endl;
-	  }	    
-	}
-	p=1;
+	std::cout << "La valeur n'existe pas" << std::endl;
+      }	    
+    }
+    p = 2;
+  }    
+  else{
+    std::cout << _player2.getNom()<< " entre un nombre disponible :  ";
+    std::cin >> choicePlayer;
+    for(int c : _numbers){
+      if( c == choicePlayer){
+	_numbers.erase(_numbers.begin(), _numbers.begin()+choicePlayer);
+	j2Numbers.push_back(choicePlayer);
       }
-    //}
+      else{
+	std::cout << "La valeur n'existe pas" << std::endl;
+      }	    
+    }
+    p=1;
+  }
+  //}
 }
 
 void Game::play(){

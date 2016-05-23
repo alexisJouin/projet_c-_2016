@@ -49,7 +49,7 @@ void Game::playMove(){
   j1 = _player1.getNom();
   j2 = _player2.getNom();
   
-  //while( res1 < 42 || res2 < 42 ){
+  while( res1 < 42 || res2 < 42 ){
 
   //joueur 1
   //Affichage de 10 nombres aléatoires
@@ -71,15 +71,15 @@ void Game::playMove(){
   for(int c2 : j2Numbers){
     std::cout << c2 << " ";
   }
-  std::cout << "Nombres de "<< j2 << " : ";
+  std::cout << "\n";
 
-    
+  //Tour du Joueur 1  
   if( p == 1){
-    std::cout << _player1.getNom()<< "Entrez un nombre disponible :  ";
+    std::cout << j1 << " entre un nombre disponible :  ";
     std::cin >> choicePlayer;
     for(int c : _numbers){
       if( c == choicePlayer){
-	_numbers.erase(_numbers.begin(), _numbers.begin()+choicePlayer);
+	_numbers.erase(_numbers.begin(), _numbers.begin()+choicePlayer);//A vérifier
 	j1Numbers.push_back(choicePlayer);
       }
       else{
@@ -88,12 +88,14 @@ void Game::playMove(){
     }
     p = 2;
   }    
+
+  //Tour du joueur 2
   else{
     std::cout << _player2.getNom()<< " entre un nombre disponible :  ";
     std::cin >> choicePlayer;
     for(int c : _numbers){
       if( c == choicePlayer){
-	_numbers.erase(_numbers.begin(), _numbers.begin()+choicePlayer);
+	_numbers.erase(_numbers.begin(), _numbers.begin()+choicePlayer);//A vérifier
 	j2Numbers.push_back(choicePlayer);
       }
       else{
@@ -102,7 +104,7 @@ void Game::playMove(){
     }
     p=1;
   }
-  //}
+  }
 }
 
 void Game::play(){
